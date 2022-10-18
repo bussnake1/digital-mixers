@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useEffect, useRef } from 'react'
 import { Cocktail } from '../types'
 import useIngredients from '../hooks/useIngredients'
 import closeIcon from '../../assets/icons/close.svg'
@@ -15,6 +15,21 @@ export const DetailCard: FunctionComponent<DetialCardProps> = ({
   close
 }) => {
   const ingredients = useIngredients(cocktail)
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        close()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
 
   return (
     <div

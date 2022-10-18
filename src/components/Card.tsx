@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent, useRef } from 'react'
 import { Cocktail } from '../types'
 
 type CardProps = {
@@ -16,6 +16,7 @@ export const Card: FunctionComponent<CardProps> = ({
   tabIndex,
   enableHover
 }) => {
+  const cardRef = useRef<HTMLDivElement>(null)
   return (
     <div
       className={`rounded drop-shadow-megetSkyggen bg-white transform-translate duration-300 ${
@@ -25,6 +26,8 @@ export const Card: FunctionComponent<CardProps> = ({
       } ${className}`}
       onClick={onClick}
       tabIndex={tabIndex}
+      ref={cardRef}
+      onKeyPress={() => cardRef.current === document.activeElement && onClick()}
     >
       <img
         src={cocktail?.strDrinkThumb}
