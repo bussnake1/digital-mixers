@@ -5,17 +5,26 @@ type CardProps = {
   cocktail: Cocktail
   className?: string
   onClick: () => void
+  tabIndex: number
+  enableHover?: boolean
 }
 
 export const Card: FunctionComponent<CardProps> = ({
   cocktail,
   onClick,
-  className
+  className,
+  tabIndex,
+  enableHover
 }) => {
   return (
     <div
-      className={`rounded drop-shadow-megetSkyggen bg-white transform-translate hover:-translate-y-0.5 duration-300 hover:drop-shadow-xl hover:cursor-pointer ${className}`}
+      className={`rounded drop-shadow-megetSkyggen bg-white transform-translate duration-300 ${
+        enableHover
+          ? 'hover:-translate-y-0.5 hover:drop-shadow-xl hover:cursor-pointer'
+          : ''
+      } ${className}`}
       onClick={onClick}
+      tabIndex={tabIndex}
     >
       <img
         src={cocktail?.strDrinkThumb}
