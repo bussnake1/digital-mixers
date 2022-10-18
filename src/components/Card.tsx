@@ -3,11 +3,20 @@ import { Cocktail } from '../types'
 
 type CardProps = {
   cocktail: Cocktail
+  className?: string
+  onClick: () => void
 }
 
-export const Card: FunctionComponent<CardProps> = ({ cocktail }) => {
+export const Card: FunctionComponent<CardProps> = ({
+  cocktail,
+  onClick,
+  className
+}) => {
   return (
-    <div className="rounded drop-shadow-md bg-white transform-translate hover:-translate-y-0.5 duration-300 hover:drop-shadow-xl hover:cursor-pointer">
+    <div
+      className={`rounded drop-shadow-md bg-white transform-translate hover:-translate-y-0.5 duration-300 hover:drop-shadow-xl hover:cursor-pointer ${className}`}
+      onClick={onClick}
+    >
       <img
         src={cocktail?.strDrinkThumb}
         alt={cocktail.strDrink}
