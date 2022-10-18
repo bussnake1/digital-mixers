@@ -54,6 +54,7 @@ function App(): ReactElement {
               cocktail={cocktail}
               key={cocktail.idDrink}
               onClick={() => onCardClick(cocktail, i)}
+              enableHover={!selectedCocktail}
               className={
                 selectedCocktail && hideCard(i, selectedIndex) ? 'hidden' : ''
               }
