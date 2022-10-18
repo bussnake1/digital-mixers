@@ -19,13 +19,13 @@ export const DetailCard: FunctionComponent<DetialCardProps> = ({
 
   return (
     <div
-      className={`relative rounded drop-shadow-md bg-white h-full row-span-2 col-span-2 ${className}`}
+      className={`relative rounded drop-shadow-megetSkyggen bg-white h-full row-span-2 col-span-2 ${className}`}
     >
       <button
-        className="w-12 h-12 absolute top-0 right-0 opacity-20 bg-white flex items-center justify-center rounded-tr rounded-bl"
+        className="w-12 h-12 absolute top-0 right-0 bg-opacity20 bg-white flex items-center justify-center rounded-tr rounded-bl"
         onClick={close}
       >
-        <img src={closeIcon} className="opacity-100" alt="close icon" />
+        <img src={closeIcon} className="" alt="close icon" />
       </button>
       <img
         src={cocktail?.strDrinkThumb}
