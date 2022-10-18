@@ -19,7 +19,7 @@ export const DetailCard: FunctionComponent<DetialCardProps> = ({
 
   return (
     <div
-      className={`relative rounded drop-shadow-megetSkyggen bg-white h-full row-span-2 col-span-2 ${className}`}
+      className={`relative rounded drop-shadow-megetSkyggen bg-white h-[720px] row-span-2 col-span-2 ${className}`}
     >
       <button
         className="w-12 h-12 absolute top-0 right-0 bg-opacity20 bg-white flex items-center justify-center rounded-tr rounded-bl"
@@ -30,7 +30,7 @@ export const DetailCard: FunctionComponent<DetialCardProps> = ({
       <img
         src={cocktail?.strDrinkThumb}
         alt={cocktail.strDrink}
-        className="rounded-t object-cover"
+        className="rounded-t object-cover h-[341px] w-full"
       />
       <div className="pt-4 px-4 pb-[55px] text-2xl leading-normal">
         <p>{cocktail.strDrink}</p>
