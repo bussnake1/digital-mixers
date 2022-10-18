@@ -14,7 +14,7 @@ export const Card: FunctionComponent<CardProps> = ({
 }) => {
   return (
     <div
-      className={`rounded drop-shadow-md bg-white transform-translate hover:-translate-y-0.5 duration-300 hover:drop-shadow-xl hover:cursor-pointer ${className}`}
+      className={`rounded drop-shadow-megetSkyggen bg-white transform-translate hover:-translate-y-0.5 duration-300 hover:drop-shadow-xl hover:cursor-pointer ${className}`}
       onClick={onClick}
     >
       <img
