@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react'
 import { Cocktail } from '../types'
-import getIngredientArray from '../utils/getIngredientArray'
+import useIngredients from '../hooks/useIngredients'
 import closeIcon from '../../assets/icons/close.svg'
 
 type DetialCardProps = {
@@ -14,8 +14,7 @@ export const DetailCard: FunctionComponent<DetialCardProps> = ({
   className,
   close
 }) => {
-  // todo: should be memoized later
-  const ingredients = getIngredientArray(cocktail)
+  const ingredients = useIngredients(cocktail)
 
   return (
     <div
