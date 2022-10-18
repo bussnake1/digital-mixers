@@ -33,7 +33,7 @@ export const DetailCard: FunctionComponent<DetialCardProps> = ({
 
   return (
     <li
-      className={`relative rounded drop-shadow-megetSkyggen bg-white h-[720px] row-span-2 col-span-2 ${className}`}
+      className={`relative rounded drop-shadow-megetSkyggen bg-white h-[720px] ${className}`}
     >
       <button
         className="w-12 h-12 absolute top-0 right-0 bg-opacity20 bg-white flex items-center justify-center rounded-tr rounded-bl"

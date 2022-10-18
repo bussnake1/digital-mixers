@@ -35,7 +35,7 @@ function App(): ReactElement {
   if (error) return <p>Error..</p>
 
   return (
-    <div className="px-10 py-[86px] bg-offwhite">
+    <div className="px-4 md:px-10 py-[86px] bg-offwhite">
       <header className="font-futura">
         <p className="flex items-center justify-center w-full leading-normal text-2xl">
           {selectedCocktail ? 'You have selected' : 'Welcome to'}
@@ -47,7 +47,7 @@ function App(): ReactElement {
         </h1>
       </header>
       <main className="pt-[103px] flex space-x-10">
-        <ul className="grid gap-10 w-full grid-cols-4 grid-flow-row">
+        <ul className="grid gap-10 w-full grid-cols-1 md:grid-cols-4 grid-flow-row">
           {cocktails.drinks.slice(0, 8).map((cocktail: Cocktail, i) => (
             <Card
               tabIndex={i + 1}
@@ -56,7 +56,11 @@ function App(): ReactElement {
               onClick={() => onCardClick(cocktail, i)}
               enableHover={!selectedCocktail}
               className={
-                selectedCocktail && hideCard(i, selectedIndex) ? 'hidden' : ''
+                selectedCocktail
+                  ? hideCard(i, selectedIndex)
+                    ? 'hidden'
+                    : 'hidden md:block'
+                  : ''
               }
             />
           ))}
@@ -67,8 +71,8 @@ function App(): ReactElement {
                 selectedCocktail
                   ? `block ${
                       isLeftSide(selectedIndex)
-                        ? 'row-start-1'
-                        : 'row-start-1 col-start-3'
+                        ? 'row-start-1 md:row-end-3 md:col-start-1 md:col-end-3'
+                        : 'row-start-1 md:row-end-3 md:col-start-3 md:col-end-5'
                     }`
                   : 'hidden'
               }
