@@ -48,12 +48,13 @@ function App(): ReactElement {
       </header>
       <main className="pt-[103px] flex space-x-10">
         <div
-          className={`grid gap-10 w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-4 ${
-            selectedCocktail ? 'grid-flow-col' : ''
+          className={`grid gap-10 w-full grid-cols-4 grid-flow-row ${
+            selectedCocktail ? '' : ''
           }`}
         >
           {cocktails.drinks.slice(0, 8).map((cocktail: Cocktail, i) => (
             <Card
+              tabIndex={i + 1}
               cocktail={cocktail}
               key={cocktail.idDrink}
               onClick={() => onCardClick(cocktail, i)}
@@ -67,7 +68,11 @@ function App(): ReactElement {
               cocktail={selectedCocktail}
               className={
                 selectedCocktail
-                  ? `block ${isLeftSide(selectedIndex) ? 'order-first' : ''}`
+                  ? `block ${
+                      isLeftSide(selectedIndex)
+                        ? 'row-start-1'
+                        : 'row-start-1 col-start-3'
+                    }`
                   : 'hidden'
               }
               close={() => setSelectedCocktail(null)}
