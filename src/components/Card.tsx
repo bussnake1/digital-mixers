@@ -16,7 +16,7 @@ export const Card: FunctionComponent<CardProps> = ({
   tabIndex,
   enableHover
 }) => {
-  const cardRef = useRef<HTMLDivElement>(null)
+  const cardRef = useRef<HTMLLIElement>(null)
   return (
     <li
       className={`rounded drop-shadow-megetSkyggen bg-white transform-translate duration-300 ${
