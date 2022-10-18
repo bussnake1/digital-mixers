@@ -47,7 +47,7 @@ function App(): ReactElement {
         </h1>
       </header>
       <main className="pt-[103px] flex space-x-10">
-        <div className="grid gap-10 w-full grid-cols-4 grid-flow-row">
+        <ul className="grid gap-10 w-full grid-cols-4 grid-flow-row">
           {cocktails.drinks.slice(0, 8).map((cocktail: Cocktail, i) => (
             <Card
               tabIndex={i + 1}
@@ -75,7 +75,7 @@ function App(): ReactElement {
               close={() => setSelectedCocktail(null)}
             />
           )}
-        </div>
+        </ul>
       </main>
     </div>
   )

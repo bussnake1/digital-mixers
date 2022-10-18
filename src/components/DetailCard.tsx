@@ -32,7 +32,7 @@ export const DetailCard: FunctionComponent<DetialCardProps> = ({
   }, [])
 
   return (
-    <div
+    <li
       className={`relative rounded drop-shadow-megetSkyggen bg-white h-[720px] row-span-2 col-span-2 ${className}`}
     >
       <button
@@ -58,6 +58,6 @@ export const DetailCard: FunctionComponent<DetialCardProps> = ({
           ))}
         </ol>
       </div>
-    </div>
+    </li>
   )
 }

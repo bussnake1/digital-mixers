@@ -18,7 +18,7 @@ export const Card: FunctionComponent<CardProps> = ({
 }) => {
   const cardRef = useRef<HTMLDivElement>(null)
   return (
-    <div
+    <li
       className={`rounded drop-shadow-megetSkyggen bg-white transform-translate duration-300 ${
         enableHover
           ? 'hover:-translate-y-0.5 hover:drop-shadow-xl hover:cursor-pointer'
@@ -40,6 +40,6 @@ export const Card: FunctionComponent<CardProps> = ({
           {cocktail.strInstructions}
         </p>
       </div>
-    </div>
+    </li>
   )
 }
